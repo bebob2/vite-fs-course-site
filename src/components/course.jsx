@@ -7,13 +7,13 @@ export const Course = ({ course }) => {
     <>
       <h1>{course.name}</h1>
 
-      <p>
+      <div>
         {course.parts.map((course, index) => (
           <p key={index}>
             "{course.name}" || {course.exercises} exercises
           </p>
         ))}
-      </p>
+      </div>
 
       <p>Total exercises: {totalExercises()}</p>
     </>
