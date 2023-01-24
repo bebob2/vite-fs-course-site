@@ -1,3 +1,6 @@
+import { Content } from "./content.jsx";
+import { Header } from "./header.jsx";
+
 export const Course = ({ course }) => {
   const totalExercises = () => {
     return course.parts.reduce((total, part) => total + part.exercises, 0);
@@ -5,15 +8,9 @@ export const Course = ({ course }) => {
 
   return (
     <>
-      <h1>{course.name}</h1>
+      <Header courseName={course.name} />
 
-      <div>
-        {course.parts.map((course, index) => (
-          <p key={index}>
-            "{course.name}" || {course.exercises} exercises
-          </p>
-        ))}
-      </div>
+      <Content course={course} />
 
       <p>Total exercises: {totalExercises()}</p>
     </>
